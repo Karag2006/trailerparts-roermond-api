@@ -1,0 +1,14 @@
+{
+    "name": "martin/tp24-pt-api",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Martin",
+            "email": "karag2006@gmx.net"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6",
+        "guzzlehttp/guzzle": "^7.0"
+    }
+}
