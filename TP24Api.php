@@ -63,8 +63,32 @@ require_once "./load-env.php";
     }
 
     // GET Product Details
+    public function getProduct($productId) {
+        $ProductResponse = $this->request('GET', '/product/'.$productId);
+        return json_decode($ProductResponse->getBody());
+    }
+
+
     // Filter Products based on one of the Product Fields
+    public function searchProduct($field, $filterType, $filterValue) {
+        $ProductSearchResponse = $this->request('POST', '/search/product', json_encode([
+            'filter' => [
+                'type' => $filterType,
+                'value' => $filterValue,
+                'field' => $field,
+            ],   
+        ]));
+        return json_decode($ProductSearchResponse->getBody());
+    }
+
     // Patch Stock in Product
+    public function setStock($productId, $stock) {
+        $StockResponse = $this->request('PATCH', '/product/'.$productId , json_encode([
+            'stock' => $stock,
+        ]));
+
+        return json_decode($StockResponse->getBody());
+    }
 }
 
 ?>
