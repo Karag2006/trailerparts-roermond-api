@@ -14,7 +14,6 @@ $filtered_list = array_filter($list, function($product) {
     return isset($product->manufacturerNumber);
 });
 
-
 // foreach Product in filtered List Get Prodcut Details from PT
 $count = 0;
 
