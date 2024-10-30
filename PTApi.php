@@ -55,7 +55,7 @@ require_once "./load-env.php";
 
     // Get Stock for Product by Id
     public function getProductStock($productId) {
-        $Product = $this->getProductDetails($productId);
+        $Product = $this->getProductDetails($productId)->product;
         return $Product->stock;
     }
 
