@@ -1,6 +1,6 @@
 <?php 
 $path = realpath(__DIR__) ."";
-require_once $path . "load-env.php";
+require_once $path . "/load-env.php";
 
     class PTApi {
     private $Client;

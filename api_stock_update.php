@@ -1,8 +1,8 @@
 <?php
 $path = realpath(__DIR__) ."";
-require_once $path . "load-env.php";
-require_once $path . "TP24Api.php";
-require_once $path. "PTApi.php";
+require_once $path . "/load-env.php";
+require_once $path . "/TP24Api.php";
+require_once $path. "/PTApi.php";
 
 $Api_tp24 = new TP24Api();
 $Api_pt = new PTApi();
