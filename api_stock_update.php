@@ -14,7 +14,7 @@ $filtered_list = array_filter($list, function($product) {
     return isset($product->manufacturerNumber);
 });
 
-$test = $Api_pt->getProductDetails("154.140.018.019");
+$test = json_decode($Api_pt->getProductDetails("154.140.018.019"));
 echo $test;
 
 // foreach Product in filtered List Get Prodcut Details from PT
