@@ -1,7 +1,8 @@
 <?php
-require_once "./load-env.php";
-require_once "./TP24Api.php";
-require_once "./PTApi.php";
+$path = realpath(__DIR__) ."";
+require_once $path . "/load-env.php";
+require_once $path . "/TP24Api.php";
+require_once $path. "/PTApi.php";
 
 $Api_tp24 = new TP24Api();
 $Api_pt = new PTApi();
@@ -13,6 +14,8 @@ $list = $Api_tp24->getProductList()->data;
 $filtered_list = array_filter($list, function($product) {
     return isset($product->manufacturerNumber);
 });
+
+
 
 // foreach Product in filtered List Get Prodcut Details from PT
 $count = 0;

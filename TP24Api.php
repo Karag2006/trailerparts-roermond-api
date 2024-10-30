@@ -1,5 +1,6 @@
 <?php 
-require_once "./load-env.php";
+$path = realpath(__DIR__) ."";
+require_once $path . "/load-env.php";
     class TP24Api {
     private $Client;
     private $ApiUrl;
