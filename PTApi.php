@@ -50,6 +50,7 @@ require_once "./load-env.php";
     // GET Product Details
     public function getProductDetails($productId) {
         $ProductDetailsResponse = $this->request('GET', "/product/$productId");
+        echo "test";
         return json_decode($ProductDetailsResponse->getBody());
     }
 
