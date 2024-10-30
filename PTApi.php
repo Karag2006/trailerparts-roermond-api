@@ -50,14 +50,17 @@ require_once "./load-env.php";
     // GET Product Details
     public function getProductDetails($productId) {
         $ProductDetailsResponse = $this->request('GET', "/product/$productId");
-        echo "test";
         return json_decode($ProductDetailsResponse->getBody());
     }
 
     // Get Stock for Product by Id
     public function getProductStock($productId) {
         $Product = $this->getProductDetails($productId);
-        return $Product->stock;
+        if(isset($Product->product) && count($Product->product) > 0) {
+
+            return $Product->product[0]->stock;
+        }
+        return null;
     }
 
 }

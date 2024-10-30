@@ -14,11 +14,10 @@ $filtered_list = array_filter($list, function($product) {
     return isset($product->manufacturerNumber);
 });
 
-$test = $Api_pt->getProductDetails("154.140.018.019");
-echo json_encode($test->product[0]->stock);
+
 
 // foreach Product in filtered List Get Prodcut Details from PT
-/* $count = 0;
+$count = 0;
 
 foreach($filtered_list as $product) {
     $ptCode = $product->manufacturerNumber;
@@ -29,9 +28,9 @@ foreach($filtered_list as $product) {
         $Api_tp24->setStock($product->id, $stock);
         $count++;
     }
-} */
+}
 
 // Notify Admin about the number of Products that had their stock updated
-/* echo "Updated Stock for $count Products"; // TODO: change into notification using Notify */
+echo "Updated Stock for $count Products"; // TODO: change into notification using Notify
 
 ?>
