@@ -1,5 +1,6 @@
 <?php 
-require_once "./load-env.php";
+$path = realpath(__DIR__) ."";
+require_once $path . "load-env.php";
 
     class PTApi {
     private $Client;
@@ -56,8 +57,9 @@ require_once "./load-env.php";
     // Get Stock for Product by Id
     public function getProductStock($productId) {
         $Product = $this->getProductDetails($productId);
+        // PT has the attributes of their products inside an array named "product"
+        // If productId is not found this array does not exist in the response.
         if(isset($Product->product) && count($Product->product) > 0) {
-
             return $Product->product[0]->stock;
         }
         return null;
