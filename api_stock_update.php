@@ -2,10 +2,12 @@
 $path = realpath(__DIR__) ."";
 require_once $path . "/load-env.php";
 require_once $path . "/TP24Api.php";
-require_once $path. "/PTApi.php";
+require_once $path . "/PTApi.php";
+require_once $path . "/Notify.php";
 
 $Api_tp24 = new TP24Api();
 $Api_pt = new PTApi();
+$Notify = new Notify();
 
 // GET List of TP24 Products
 $list = $Api_tp24->getProductList()->data;
@@ -32,6 +34,6 @@ foreach($filtered_list as $product) {
 }
 
 // Notify Admin about the number of Products that had their stock updated
-echo "Updated Stock for $count Products"; // TODO: change into notification using Notify
+$Notify->sendNotification("Stock Update: " . $count . " Products Updated");
 
 ?>
