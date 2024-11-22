@@ -34,6 +34,6 @@ foreach($filtered_list as $product) {
 }
 
 // Notify Admin about the number of Products that had their stock updated
-$Notify->sendNotification("Stock Update: " . $count . " Products Updated");
+$Notify->sendNotification("Lagerbestand Aktualisiert: " . $count . " Produkte geändert");
 
 ?>
